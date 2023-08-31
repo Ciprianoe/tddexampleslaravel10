@@ -28,7 +28,11 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //redirect para obtener 302
+        //dd($request->all());
+        $eventData =  $request->all();
+        Event::create($eventData);
+        return redirect()->route('events.index');
     }
 
     /**
